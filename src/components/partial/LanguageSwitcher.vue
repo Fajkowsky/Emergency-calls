@@ -41,7 +41,5 @@ export default {
 
 <style lang="scss" scoped>
   #language-switcher {
-    display: flex;
-    align-items: center;
   }
 </style>
