@@ -1,6 +1,6 @@
 <template>
   <header class="container">
-    <span class="title px-1">
+    <span class="title mx-1">
       Emergency numbers
     </span>
   </header>

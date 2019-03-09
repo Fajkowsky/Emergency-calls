@@ -1,7 +1,11 @@
-.p {
+@mixin margin-x($property) {
+  margin: 0 $property;
+}
+
+.m {
   &x {
     &-1 {
-      margin: 0 1rem;
+      @include margin-x(1rem);
     }
   }
 }
