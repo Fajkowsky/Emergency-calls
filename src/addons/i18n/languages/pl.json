@@ -1,3 +1,7 @@
 {
-  "TITLE": "Telefony alarmowe"
+  "TITLE": "Telefony alarmowe",
+  "LANG": {
+    "PL": "Polski",
+    "EN": "Angielski"
+  }
 }

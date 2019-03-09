@@ -1,3 +1,7 @@
 {
-  "TITLE": "Emergency numbers"
+  "TITLE": "Emergency numbers",
+  "LANG": {
+    "PL": "Polish",
+    "EN": "English"
+  }
 }
