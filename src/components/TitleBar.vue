@@ -1,7 +1,7 @@
 <template>
   <header class="container">
     <span class="title mx-1">
-      Emergency numbers
+      {{ $t('TITLE') }}
     </span>
   </header>
 </template>
