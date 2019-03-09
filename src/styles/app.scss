@@ -1,1 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 @import '~normalize.css';
+@import './variables';
+@import './utils';
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  color: $base-font-color;
+}

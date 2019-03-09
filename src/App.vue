@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    asd
+    <title-bar />
   </div>
 </template>
 
 <script>
+import TitleBar from '@/components/TitleBar.vue';
+
 export default {
   name: 'App',
+  components: { TitleBar },
 };
 </script>
 
