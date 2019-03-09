@@ -1,6 +1,6 @@
 {
-  "name": "emergency-numbers",
-  "short_name": "emergency-numbers",
+  "name": "Emergency numbers",
+  "short_name": "SOS",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
