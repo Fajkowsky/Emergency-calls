@@ -5,7 +5,7 @@
         v-for="language in languages"
         :key="language"
         :value="language"
-        :selected="language === currentLanguage"
+        :selected="isLanguageSelected(language)"
       >
         {{ $t(getLanguageTransKey(language)) }}
       </option>
@@ -29,12 +29,15 @@ export default {
     },
   },
   methods: {
+    isLanguageSelected(language) {
+      return language === this.currentLanguage;
+    },
     changeLanguage(event) {
       this.$i18n.locale = event.target.value;
     },
     getLanguageTransKey(language) {
-      return `LANG.${language.toUpperCase()}`
-    }
+      return `LANG.${language.toUpperCase()}`;
+    },
   },
 };
 </script>

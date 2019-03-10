@@ -5,7 +5,7 @@
         <span class="title">
           {{ $t('TITLE') }}
         </span>
-        <language-switcher/>
+        <language-switcher />
       </div>
     </header>
   </div>
