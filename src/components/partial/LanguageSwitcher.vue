@@ -1,42 +1,38 @@
 <template>
   <div id="language-switcher">
-    <select @change="changeLanguage">
-      <option
-        v-for="language in languages"
-        :key="language"
-        :value="language"
-        :selected="isLanguageSelected(language)"
-      >
-        {{ $t(getLanguageTransKey(language)) }}
-      </option>
-    </select>
+    <custom-select
+      v-model="language"
+      :options="languages"
+    />
   </div>
 </template>
 
 <script>
 import { SUPPORTED_LANGS } from '@/addons/i18n/const';
+import CustomSelect from '@/components/ui/CustomSelect.vue';
 
 export default {
   name: 'LanguageSwitcher',
+  components: { CustomSelect },
   data() {
     return {
-      languages: Object.keys(SUPPORTED_LANGS),
+      language: this.$i18n.locale,
+      languages: this.createLanguages(),
     };
   },
-  computed: {
-    currentLanguage() {
-      return this.$i18n.locale;
+  watch: {
+    language(value) {
+      console.log(value);
+      this.$i18n.locale = value;
     },
   },
   methods: {
-    isLanguageSelected(language) {
-      return language === this.currentLanguage;
-    },
-    changeLanguage(event) {
-      this.$i18n.locale = event.target.value;
-    },
-    getLanguageTransKey(language) {
-      return `LANG.${language.toUpperCase()}`;
+    createLanguages() {
+      return Object.keys(SUPPORTED_LANGS)
+      .map((lang) => ({
+        id: lang,
+        text: `LANG.${lang.toUpperCase()}`,
+      }));
     },
   },
 };

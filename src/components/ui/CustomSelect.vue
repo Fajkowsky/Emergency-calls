@@ -1,14 +1,14 @@
 <template>
   <div id="custom-select">
-    <ul>
-      <li
+    <select @change="setOption">
+      <option
         v-for="option in options"
         :key="option.id"
         :value="option.id"
       >
         {{ $t(option.text) }}
-      </li>
-    </ul>
+      </option>
+    </select>
   </div>
 </template>
 
@@ -16,6 +16,10 @@
 export default {
   name: 'CustomSelect',
   props: {
+    value: {
+      type: String,
+      required: true,
+    },
     options: {
       type: Array,
       required: true,
@@ -24,12 +28,23 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      local: this.value,
+    };
+  },
+  watch: {
+    value(value) {
+      this.local = value;
+    },
+    local(value) {
+      this.$emit('input', value);
+    },
+  },
+  methods: {
+    setOption($event) {
+      this.local = $event.target.value;
+    }
+  }
 };
 </script>
-
-<style lang="scss" scoped>
-  #custom-select {
-    color: black;
-  }
-
-</style>
